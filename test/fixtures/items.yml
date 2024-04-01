@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+chores_item_one:
+  title: Vaccuum floor
+  list: chores
+
+chores_item_two:
+  title: Clean pantry
+  list: chores
+
+chores_item_three:
+  title: Change bed sheets
+  list: chores
+
+work_item_one:
+  title: Check account
+  list: work
+
+work_item_two:
+  title: Read emails
+  list: work
+
+work_item_three:
+  title: Set up meetings
+  list: work

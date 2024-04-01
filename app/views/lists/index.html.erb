@@ -1,0 +1,16 @@
+<h1>This is all your todos</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<%= link_to 'New list', new_list_path %>
+
+<% @lists.each do |list| %>
+  <h1><%= link_to list.name, list_path(list) %></h1>
+  <ul>
+    <% list.items.each do |item| %>
+      <li><%= item.title %></li>
+    <% end %>
+  </ul>
+<% end %>
