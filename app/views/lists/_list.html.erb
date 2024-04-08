@@ -1,0 +1,17 @@
+<%= turbo_frame_tag "whole_list_#{list.id}" do %>
+  <div class='my-8 mx-5 border-solid border-2 p-2 border-black'>
+    <%= turbo_frame_tag list do %>
+      <h1 class='text-2xl'><%= link_to list.name, list_path(list) %></h1>
+
+      <%= link_to 'Edit list name', edit_list_path(list)%>
+    <% end %>
+
+    <%= button_to 'Remove list', list_path(list), method: :delete %>
+
+    <ul>
+      <% list.items.each do |item| %>
+        <li><%= item.title %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

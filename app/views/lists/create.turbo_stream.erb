@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend 'lists', partial: 'lists/list', locals: {list: @list} %>
+<%= turbo_stream.replace List.new, "" %>

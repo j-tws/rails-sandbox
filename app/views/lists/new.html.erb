@@ -1,3 +1,5 @@
-<h1>Create new list</h1>
+<h1 class='my-8 mx-5 text-2xl'>Create new list</h1>
 
-<%= render 'form', list: @list %>
+<%= turbo_frame_tag List.new do %>
+  <%= render 'form', list: @list %>
+<% end %>

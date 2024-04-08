@@ -1,3 +1,5 @@
 <h1>Edit new list</h1>
 
-<%= render 'form', list: @list %>
+<%= turbo_frame_tag @list do %>
+  <%= render 'form', list: @list %>
+<% end %>
