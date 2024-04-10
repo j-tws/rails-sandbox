@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     if @list.save
       respond_to do |format|
         format.html { redirect_to lists_path, notice: 'List successfully created.' }
-        format.turbo_stream
+        format.turbo_stream { flash.now[:notice] = 'List successfully created.' }
       end
     else
       render :new, status: :unprocessable_entity

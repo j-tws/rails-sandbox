@@ -1,2 +1,3 @@
-<%= turbo_stream.prepend 'lists', partial: 'lists/list', locals: {list: @list} %>
-<%= turbo_stream.replace List.new, "" %>
+<%= turbo_stream.prepend 'lists', @list %>
+<%= turbo_stream.update List.new, "" %>
+<%= turbo_stream.prepend 'flash', partial: 'layouts/flash' %>
