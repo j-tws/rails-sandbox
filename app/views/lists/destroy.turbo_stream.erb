@@ -1,1 +1,2 @@
 <%= turbo_stream.remove "whole_list_#{@list.id}" %>
+<%= turbo_stream.prepend 'flash', partial: 'layouts/flash' %>

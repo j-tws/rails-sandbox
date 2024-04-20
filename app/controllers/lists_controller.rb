@@ -30,7 +30,10 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to lists_path, notice: 'List successfully edited.'
+      respond_to do |format|
+        format.html { redirect_to lists_path, notice: 'List successfully edited.' }
+        format.turbo_stream { flash.now[:notice] = 'List successfully edited.' }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -41,7 +44,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to lists_path }
-      format.turbo_stream
+      format.turbo_stream { flash.now[:notice] = 'List successfully destroyed.' }
     end
   end
 
